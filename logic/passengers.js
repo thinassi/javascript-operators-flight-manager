@@ -6,32 +6,31 @@ function Passengers() {
         if (totalNumberOfPassengers < flightCapacity) {
             return totalNumberOfPassengers;
         } else {
-            throw new Error();
+            throw new Error("Flight capacity (" + flightCapacity + ") exceeded. You have " + passengersNumber + " passengers.");
         }
     };
 
-    distributeAllSeatsToAllPassengers = (numberOfVipPassengers, numberOfRegularPassengers, numberOfFlights, numberOfBusinessSeatsPerFlight, numberOfEconomySeatsPerFlight) => {
-        let vipCount = 0;
-        let vipPassengersBusinessSeats = 0;
-        let vipPassengersEconomySeats = 0;
+    distributeAllSeatsToAllPassengers = (numberOfVipPassengers, numberOfRegularPassengers, numberOfFlights,
+        numberOfBusinessSeatsPerFlight, numberOfEconomySeatsPerFlight) => {
 
-        let regularCount = 0;
-        let regularPassengersBusinessSeats = 0;
-        let regularPassengersEconomySeats = 0;
+        let vipCount = 0, vipPassengersBusinessSeats = 0, vipPassengersEconomySeats = 0;
+        let regularCount = 0,regularPassengersBusinessSeats = 0, regularPassengersEconomySeats = 0;
+        let availableBusiness = numberOfFlights * numberOfBusinessSeatsPerFlight;
+        let availableRegular =  numberOfFlights * numberOfEconomySeatsPerFlight;
 
-        while((vipCount < numberOfBusinessSeatsPerFlight) && (vipCount < numberOfVipPassengers)){
+        while((vipCount < availableBusiness) && (vipCount < numberOfVipPassengers)){
             vipPassengersBusinessSeats += 1;
             vipCount += 1;
         }
-        while((vipCount < numberOfVipPassengers) && (vipPassengersEconomySeats < numberOfEconomySeatsPerFlight)){ 
+        while((vipCount < numberOfVipPassengers) && (vipPassengersEconomySeats < availableRegular)){ 
             vipPassengersEconomySeats += 1;
             vipCount +=1;
         }
-        while((vipPassengersBusinessSeats < numberOfBusinessSeatsPerFlight) && (regularCount < numberOfBusinessSeatsPerFlight) && (regularCount < numberOfRegularPassengers)){
+        while((vipPassengersBusinessSeats < availableBusiness) && (regularCount < availableBusiness) && (regularCount < availableRegular)){
             regularPassengersBusinessSeats += 1;
             regularCount += 1;
         }
-        while((vipPassengersEconomySeats < numberOfEconomySeatsPerFlight) && (regularPassengersEconomySeats < numberOfEconomySeatsPerFlight) && (regularCount < numberOfRegularPassengers)){
+        while((vipPassengersEconomySeats < availableRegular) && (regularPassengersEconomySeats < availableRegular) && (regularCount < numberOfRegularPassengers)){
             regularPassengersEconomySeats += 1;
             regularCount += 1;
         }
@@ -41,11 +40,11 @@ function Passengers() {
         //     vipPassengersBusinessSeats = numberOfBusinessSeatsPerFlight;
         //     regularPassengersBusinessSeats = ( numberOfBusinessSeatsPerFlight - numberOfVipPassengers);
         // }
-        return {vipPassengersBusinessSeats, vipPassengersEconomySeats, regularPassengersBusinessSeats, regularPassengersEconomySeats}
+        return {vipPassengersBusinessSeats, vipPassengersEcoxnomySeats, regularPassengersBusinessSeats, regularPassengersEconomySeats}
         // return passengers;
     }
 
     return { checkFlightCapacity, distributeAllSeatsToAllPassengers };
 };
 
-module.exports = Passengers;
+module.exports = Passengers();

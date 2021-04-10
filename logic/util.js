@@ -1,5 +1,5 @@
 function Util() {
-    distributedPassengers = distributeAllSeatsToAllPassengers();
+    // distributedPassengers = distributeAllSeatsToAllPassengers();
     
     calculateTotalDistributedPassengers = (distributedPassengers) => {
         passengersSum = passengers.vipPassengersBusinessSeats + passengers.vipPassengersEconomySeats + passengers.regularPassengersBusinessSeats + passengers.regularPassengersEconomySeats
@@ -14,5 +14,4 @@ function Util() {
     return { calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers};
 }
 
-module.exports = Util;
-
+module.exports = Util();
