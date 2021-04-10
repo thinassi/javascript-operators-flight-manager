@@ -10,7 +10,6 @@ function Util() {
     calculateTotalNumberOfPassengers = (amountOfPassengers) => {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         totalNumberOfPassengers = amountOfPassengers.reduce(reducer);
-        console.log(totalNumberOfPassengers);
         return totalNumberOfPassengers
     }
 
