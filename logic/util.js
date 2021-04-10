@@ -2,7 +2,8 @@ function Util() {
     // distributedPassengers = distributeAllSeatsToAllPassengers();
     
     calculateTotalDistributedPassengers = (distributedPassengers) => {
-        passengersSum = passengers.vipPassengersBusinessSeats + passengers.vipPassengersEconomySeats + passengers.regularPassengersBusinessSeats + passengers.regularPassengersEconomySeats
+        console.log(distributedPassengers);
+        passengersSum = distributedPassengers.vipPassengersBusinessSeats + distributedPassengers.vipPassengersEconomySeats + distributedPassengers.regularPassengersBusinessSeats + distributedPassengers.regularPassengersEconomySeats
         return passengersSum;
     }
 

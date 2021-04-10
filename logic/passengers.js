@@ -10,8 +10,7 @@ function Passengers() {
         }
     };
 
-    distributeAllSeatsToAllPassengers = (numberOfVipPassengers, numberOfRegularPassengers, numberOfFlights,
-        numberOfBusinessSeatsPerFlight, numberOfEconomySeatsPerFlight) => {
+    distributeAllSeatsToAllPassengers = (numberOfVipPassengers, numberOfRegularPassengers, numberOfFlights, numberOfBusinessSeatsPerFlight, numberOfEconomySeatsPerFlight) => {
 
         let vipCount = 0, vipPassengersBusinessSeats = 0, vipPassengersEconomySeats = 0;
         let regularCount = 0,regularPassengersBusinessSeats = 0, regularPassengersEconomySeats = 0;
@@ -40,6 +39,10 @@ function Passengers() {
         //     vipPassengersBusinessSeats = numberOfBusinessSeatsPerFlight;
         //     regularPassengersBusinessSeats = ( numberOfBusinessSeatsPerFlight - numberOfVipPassengers);
         // }
+        console.log('vipPassengersBusinessSeats: ' + vipPassengersBusinessSeats)
+        console.log('vipPassengersEconomySeats ' + vipPassengersEconomySeats)
+        console.log('regularPassengersBusinessSeats ' + regularPassengersBusinessSeats)
+        console.log('regularPassengersEconomySeats ' + regularPassengersEconomySeats)
         return {vipPassengersBusinessSeats, vipPassengersEconomySeats, regularPassengersBusinessSeats, regularPassengersEconomySeats}
         // return passengers;
     }
