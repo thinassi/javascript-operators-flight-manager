@@ -22,11 +22,11 @@ function Flights() {
         let totalDistance = distancesArray.reduce(reducer);
         
         if (totalDistance <= (distanceLimit / 2)) {
-            return "The revision needs to be done within the next 3 months.";
+            return "The revision needs to be done within the next 3 months";
         } else if (totalDistance <= (3 * distanceLimit / 4)){
-            return "The revision needs to be done within the next 2 months.";
+            return "The revision needs to be done within the next 2 months";
         } else if (totalDistance <= distanceLimit){
-            return "The revision needs to be done within the next month.";
+            return "The revision needs to be done within the next month";
         } else {
             throw new Error("Flight maximum allowed distance (" + distanceLimit + ") exceeded. No flight is allowed any longer, you need to make the revision immediately.");
         }
