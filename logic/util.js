@@ -1,11 +1,14 @@
 function Util() {
     // distributedPassengers = distributeAllSeatsToAllPassengers();
     
-    calculateTotalDistributedPassengers = (distributedPassengers) => {
-        console.log(distributedPassengers);
-        totalDistributedPassengers = distributedPassengers.vipPassengersBusinessSeats + distributedPassengers.vipPassengersEconomySeats + distributedPassengers.regularPassengersBusinessSeats + distributedPassengers.regularPassengersEconomySeats
+    function calculateTotalDistributedPassengers(distributedPassengers) {
+        let totalDistributedPassengers = 0;
+        let value;
+        for (value in distributedPassengers) {
+           totalDistributedPassengers += distributedPassengers[value];
+        }
         return totalDistributedPassengers;
-    }
+     }
 
      function calculateTotalNumberOfPassengers(passengersArray) {
         let totalNumberOfPassengers = 0;
