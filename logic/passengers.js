@@ -40,7 +40,7 @@ function Passengers() {
         //     vipPassengersBusinessSeats = numberOfBusinessSeatsPerFlight;
         //     regularPassengersBusinessSeats = ( numberOfBusinessSeatsPerFlight - numberOfVipPassengers);
         // }
-        return {vipPassengersBusinessSeats, vipPassengersEcoxnomySeats, regularPassengersBusinessSeats, regularPassengersEconomySeats}
+        return {vipPassengersBusinessSeats, vipPassengersEconomySeats, regularPassengersBusinessSeats, regularPassengersEconomySeats}
         // return passengers;
     }
 
